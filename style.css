@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #111;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: 15px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #000;
+  color: #fff;
+  z-index: 100;
+}
+.logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+.brand {
+  font-weight: bold;
+  vertical-align: super;
+}
+.btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #1d4ed8;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  padding-top: 100px;
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+}
+.hero .left {
+  flex: 1;
+  padding: 60px;
+}
+.hero .right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Intro */
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px;
+}
+.intro-text {
+  flex: 1;
+  padding: 20px;
+}
+.intro-img img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Style Section */
+/* Style Section */
+.style {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: url("img/bisiklet.png") no-repeat center center/cover;
+}
+
+.style::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.55); /* arka planı karart */
+}
+
+.style-content, .style-img {
+  flex: 1;
+}
+
+.style .overlay {
+  position: relative;
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  padding: 40px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  z-index: 1; /* overlay üstte kalsın */
+}
+
+.style-content h4 {
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #ddd;
+}
+
+.style-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.style-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #eee;
+}
+
+.style-img img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+
+
+
+
+/* Blog */
+.blog {
+  padding: 80px;
+  background: #fafafa;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 20px;
+}
+.blog-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* FAQ */
+.faq {
+  padding: 80px;
+  text-align: start;
+  background: #000000;
+  color: #fff;
+}
+.faq-item {
+  margin: 15px auto;
+  border-bottom: 1px solid #ffffff;
+  padding: 10px;
+  color: #fff;
+}
+
+/* CTA */
+.cta {
+  padding: 80px;
+  text-align: center;
+  background: #fafafa;
+}
+.cta img {
+  margin-top: 20px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Footer */
+.footer {
+  padding: 60px;
+  text-align: center;
+  background: #002d22;
+  color: #fff;
+}
+.footer .mail {
+  display: block;
+  margin: 10px 0;
+  color: #4ade80;
+}
+.footer .socials a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.cta {
+  padding: 80px;
+  text-align: center;
+  background: #fafafa;
+}
+
+.cta-image {
+  position: relative;
+  display: inline-block; /* resme göre hizalasın */
+}
+
+.cta-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  display: block;
+}
+
+.cta-image .offer-btn {
+  position: absolute;
+  margin-top: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* ortala */
+}
+
+
+
+
+
+
+
+
+
+/* WORKS */
+.works-section {
+  padding: 60px 0;
+  background: #fff;
+}
+.works-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.works {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+.card {
+  cursor: pointer;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: .3s;
+}
+.card:hover { transform: scale(1.02); }
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card h3 { margin: 10px 0; }
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
+  margin: auto;
+  position: relative;
+}
+.slides {
+  display: flex;
+  transition: 0.5s;
+}
+.slides img {
+  max-width: 100%;
+  max-height: 80vh;  /* ekranı taşmasın */
+  object-fit: contain;
+  display: none;     /* JS sadece seçiliye block yapacak */
+  margin: auto;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+.close {
+  position: absolute;
+  top: 20px; right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    padding: 10px 20px;
+  }
+  .brand {
+    font-size: 14px;
+  }
+  .nav-right .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-right: 0;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  .hero .left, .hero .right {
+    padding: 20px 0;
+  }
+  .intro {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+  .style .overlay {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  .works {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .faq {
+    padding: 40px 20px;
+  }
+  .cta {
+    padding: 40px 20px;
+  }
+  .footer {
+    padding: 30px 20px;
+  }
+}
+
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+

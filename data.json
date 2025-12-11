@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Prototip Maket",
+    "desc": "Mimari projeler için detaylı 3D maket baskıları.",
+    "images": ["img/is1.jpg"]
+  },
+  {
+    "title": "Endüstriyel Parçalar",
+    "desc": "ABS ve PETG parçalar ile dayanıklı üretimler.",
+    "images": ["img/is2.jpg", "img/is2-2.jpg", "img/is2-3.jpg"]
+  },
+  {
+    "title": "Endüstriyel Parçalar",
+    "desc": "ABS ve PETG parçalar ile dayanıklı üretimler.",
+    "images": ["img/is2.jpg", "img/is2-2.jpg", "img/is2-3.jpg"]
+  },
+  {
+    "title": "Endüstriyel Parçalar",
+    "desc": "ABS ve PETG parçalar ile dayanıklı üretimler.",
+    "images": ["img/is2.jpg", "img/is2-2.jpg", "img/is2-3.jpg"]
+  },
+  {
+    "title": "Endüstriyel Parçalar",
+    "desc": "ABS ve PETG parçalar ile dayanıklı üretimler.",
+    "images": ["img/is2.jpg", "img/is2-2.jpg", "img/is2-3.jpg"]
+  },
+  {
+    "title": "Endüstriyel Parçalar",
+    "desc": "ABS ve PETG parçalar ile dayanıklı üretimler.",
+    "images": ["img/is2.jpg", "img/is2-2.jpg", "img/is2-3.jpg"]
+  },
+  {
+    "title": "Endüstriyel Parçalar",
+    "desc": "ABS ve PETG parçalar ile dayanıklı üretimler.",
+    "images": ["img/is2.jpg", "img/is2-2.jpg", "img/is2-3.jpg"]
+  }
+]

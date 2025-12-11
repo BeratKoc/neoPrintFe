@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeoPrint - Ödeme Yap</title>
+
+  <link rel="stylesheet" href="./payment.css" />
+</head>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="/index.html">
+        <img src="../img/logo.png" alt="NeoPrint Logo" class="logo" />
+      </a>
+      <span class="brand">NeoPrint</span>
+    </div>
+    <div class="nav-right">
+      <a href="/index.html" class="btn small">⬅ Geri Dön</a>
+    </div>
+  </nav>
+
+  <!-- Loader (istersen JS ile kullanırsın) -->
+  <div id="loader" class="loader-overlay" style="display:none;">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- İçerik -->
+  <main class="container">
+    <h2>Ödeme Ekranımız Geliştirme Aşamasında</h2>
+    <p style="margin-bottom: 20px;">
+      NeoPrint için güvenli ve esnek bir ödeme altyapısı üzerinde çalışıyoruz.
+      Çok yakında projelerinize ait ödemeleri bu sayfa üzerinden
+      tamamlayabileceksiniz.
+    </p>
+
+    <!-- Still under development görseli -->
+    <img
+      src="../img/stillDevelopment.png"
+      alt="NeoPrint - Still Under Development"
+      class="payment-image"
+    />
+  </main>
+
+  <!-- Toast (ileride JS kullanırsan hazır dursun) -->
+  <div id="toast" class="toast"></div>
+</body>
+</html>

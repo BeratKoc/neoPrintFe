@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NeoPrint - 3D Baskı</title>
+    <script src="env.js"></script>
+    <script>
+    // CSS dosyasını env’den ekle
+    document.write(`<link rel="stylesheet" href="${window.MAIN_STYLE_URL}" />`);
+  </script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <img src="img/logo.png" alt="NeoPrint Logo" class="logo" />
+        <span class="brand">NeoPrint</span>
+      </div>
+      <div class="nav-right">
+        <a href="payment/payment.html" class="btn small">Ödeme Yap</a>
+        <a href="offer/offer.html" class="btn small">Teklif al</a>
+        
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="left">
+        <h1>3D baskı ile<br />hayallerinizi<br />gerçeğe dönüştürün</h1>
+        <p>
+          İlk taslaktan son parçaya kadar, hassas 3D baskı ile yaratmanıza,
+          prototip oluşturmanıza ve yenilik yapmanıza yardımcı oluyoruz.
+          Mühendis, tasarımcı, eğitimci veya amatör olun, fikirlerinizi birlikte
+          hayata geçirelim.
+        </p>
+      </div>
+      <div class="right">
+        <div class="grid">
+          <img src="img/robot.png" alt="" />
+          <img src="img/robot3.png" alt="" />
+          <img src="img/robot2.png" alt="" />
+          <img src="img/ofis.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="intro">
+      <div class="intro-text">
+        <h2>Fikirler hızla gerçeğe dönüşüyor</h2>
+        <p>
+          Uzman 3D baskı hizmetlerimizle konseptlerinizi somut tasarımlara
+          dönüştürün. Çeşitli malzemelerde hassasiyet ve hız sunarak hem
+          profesyoneller hem de amatörler için ideal çözümler sunuyoruz.
+        </p>
+      </div>
+      <div class="intro-img">
+        <img src="img/boyama.jpg" alt="Boyama araçları" />
+      </div>
+    </section>
+
+    <section class="style">
+      <div class="overlay">
+        <div class="style-content">
+          <h4>HER YENİLİKÇİ İÇİN TASARLANDI</h4>
+          <h2>3D baskı, sizin tarzınız</h2>
+          <p>
+            Mühendisler, sanatçılar, öğretmenler ve hayalperestler—esnek 3D
+            baskımız iş akışınıza uyum sağlar. Prototipleme, öğretim veya icat
+            yaparken vizyonunuzu hayata geçirmenize yardımcı olmak için
+            buradayız.
+          </p>
+          <a href="#" class="btn">Keşfedin</a>
+        </div>
+        <div class="style-img">
+          <img src="img/toplanti.png" alt="Toplantı" />
+        </div>
+      </div>
+    </section>
+
+    <!--Testimonials -->
+    <!--
+    <section class="testimonials">
+      <h2>Gerçek sonuçlar, gerçek sesler</h2>
+      <p>
+        Yaratıcılar, mühendisler ve yenilikçiler, 3D baskı uzmanlığımızı
+        kullanarak fikirlerini nasıl gerçeğe dönüştürüyor?
+      </p>
+      <div class="cards">
+        <div class="card">
+          Alex Monroe<br /><small>Ürün Tasarımcısı</small>
+          <p>NeoPrint, prototiplemeyi çok kolay hale getirdi...</p>
+        </div>
+        <div class="card">
+          Taylor Singh<br /><small>Makine Mühendisi</small>
+          <p>Hız ve hassasiyet beni etkiledi...</p>
+        </div>
+        <div class="card">
+          Jordan Avery<br /><small>Mimar</small>
+          <p>Çizimlerden modellere, her şey sorunsuzdu...</p>
+        </div>
+        <div class="card">
+          Morgan Ellis<br /><small>Eğitmen</small>
+          <p>
+            Öğrencilerim fikirlerinin canlandığını görmekten çok mutlu oldu...
+          </p>
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- Blog Section -->
+    <!--
+    <section class="blog">
+      <h2>Yaratıcı fikirler, sınırsız olanaklar</h2>
+      <div class="blog-grid">
+        <img src="img/ekip.jpg" alt="" />
+        <div class="blog-card">
+          <span>Trendler</span>
+          <h3>Bugün 3D baskıda yenilikler</h3>
+        </div>
+        <div class="blog-card">
+          <span>Topluluk</span>
+          <h3>Yaratıcı ekibimizi tanıyın</h3>
+        </div>
+      </div>
+    </section>
+-->
+    <!-- FAQ -->
+    <section class="faq">
+      <!-- FAQ -->
+      <section class="faq">
+        <h2 style="text-align: center">Sıkça Sorulan Sorular</h2>
+        <br />
+
+        <div class="faq-item">
+          <h3>3D baskı için nasıl teklif alabilirim?</h3>
+          Formumuzu doldurarak çiziminizi (.STL formatı) yükleyebilir ve kısa
+          sürede uzman ekibimizden özel fiyat ve süre teklifi alabilirsiniz.
+        </div>
+
+        <div class="faq-item">
+          <h3>Hangi malzemelerle 3D baskı yapıyorsunuz?</h3>
+          PLA +, PETG, ABS, ASA, TPU, Nylon ve karbon fiber katkılı filamentler
+          kullanıyoruz. Projenize en uygun malzemeyi seçmenize de yardımcı
+          oluyoruz.
+        </div>
+
+        <div class="faq-item">
+          <h3>3D baskı süresi ne kadar sürer?</h3>
+          Siparişin karmaşıklığına ve parça boyutuna bağlı olarak genellikle 1-7
+          iş günü içinde üretim tamamlanır. Acil talepler için önceliklendirme
+          yapılabilir. Bazı modeller, çok adetli talepler daha uzun sürede
+          tamamlanabilir fakat bu sizin onayınıza sunulacaktır.
+        </div>
+
+        <div class="faq-item">
+          <h3>Minimum sipariş adedi var mı?</h3>
+          Hayır, tek parça dahi olsa 3D baskı hizmeti veriyoruz. Prototip
+          üretimi veya kişisel projeler için idealdir.
+        </div>
+
+        <div class="faq-item">
+          <h3>3D baskı dosyasını nasıl hazırlamalıyım?</h3>
+          STL, OBJ veya STEP formatında dosya gönderebilirsiniz. Dosyanız
+          baskıya uygun değilse düzenleme veya modelleme desteği de sunuyoruz.
+        </div>
+
+        <div class="faq-item">
+          <h3>3D baskı fiyatları neye göre belirleniyor?</h3>
+          Parça boyutu, malzeme türü, baskı süresi ve katman yüksekliği gibi
+          faktörlere göre fiyat belirlenir. Detaylı teklif için dosyanızı
+          yükleyebilirsiniz.
+        </div>
+
+        <div class="faq-item">
+          <h3>Dosyam gizli tutuluyor mu?</h3>
+          Evet, tüm müşterilerimizin dosyaları gizli tutulur ve üçüncü kişilerle
+          paylaşılmaz. Dilerseniz gizlilik sözleşmesi (NDA) imzalayabiliriz.
+        </div>
+
+        <div class="faq-item">
+          <h3>STL dosyam yok, yine de teklif alabilir miyim?</h3>
+          Evet. Fikriniz ya da çiziminiz varsa bizimle paylaşabilirsiniz.
+          Gerekirse size özel 3D modelleme desteği de sağlıyoruz. Fakat 3D
+          modelleme ücreti daha yüksek olacaktır.
+        </div>
+
+        <div class="faq-item">
+          <h3>3D baskı dayanıklı olur mu?</h3>
+          Malzeme seçimine göre değişir. Örneğin ABS ve karbon fiber katkılı
+          filamentler daha yüksek mukavemet sunar. Kullanım amacınıza göre öneri
+          sunuyoruz.
+        </div>
+
+        <div class="faq-item">
+          <h3>Teslimat nasıl yapılıyor?</h3>
+          Baskı tamamlandığında dilerseniz ofisimizden teslim alabilir ya da
+          Türkiye’nin her yerine kargo ile gönderim yapabiliriz.
+        </div>
+
+        <div class="faq-item">
+          <h3>Hangi şehirlerden sipariş verebilirim?</h3>
+          Tüm Türkiye’den sipariş alıyoruz. Dosyanızı gönderdiğiniz anda fiyat
+          teklifini alabilir, kargo ile teslimat seçebilirsiniz.
+        </div>
+
+        <div class="faq-item">
+          <h3>Renk seçeneği sunuyor musunuz?</h3>
+          Evet, elimizde birçok renk mevcut. PLA, PETG, TPU, ABS, ASA gibi
+          filamentlerde farklı renkleri stoklarımızdan seçebilirsiniz.
+        </div>
+
+        <div class="faq-item">
+          <h3>Baskı sonrası yüzey işlemleri yapıyor musunuz?</h3>
+          Evet. Zımparalama, astar, boya gibi post-processing işlemleri
+          opsiyonel olarak sunuyoruz. Teklif formunda belirtmeniz yeterlidir.
+        </div>
+
+        <div class="faq-item">
+          <h3>3D tarama (scan) hizmeti sunuyor musunuz?</h3>
+          Evet, fiziksel parçaların 3D taramasını yaparak dijital model elde
+          edebiliriz. Bu model üzerinden baskı veya iyileştirme yapılabilir.
+        </div>
+
+        <div class="faq-item">
+          <h3>Mekanik veya işlevsel parçalar da basabilir misiniz?</h3>
+          Evet, hareketli, vidalanabilir ya da işlevsel parçalar için uygun
+          malzeme ve toleranslarla baskı yapıyoruz. Gerekirse montaj testleri de
+          uygulanabilir.
+        </div>
+
+        <div class="faq-item">
+          <h3>FDM dışında farklı baskı teknolojileri sunuyor musunuz?</h3>
+          Şu an sadece FDM teknolojisiyle hizmet veriyoruz. Yakında SLA (Reçine)
+          baskı seçeneği de eklenecektir.
+        </div>
+
+        <div class="faq-item">
+          <h3>Ödeme nasıl yapılıyor?</h3>
+          Sizin başvurunuz sonrası inceleyip size bir teklif dosyası
+          gönderiyoruz. Bunu kabul ettikten sonra sitemiz üzerinden ödeme,
+          fatura bilgisi, teslimat bilgisi gibi bilgileri girerek sipariş
+          oluşturabileceksiniz. Havale/EFT, kredi kartı ile ödeme
+          yapabilirsiniz.
+        </div>
+
+        <div class="faq-item">
+          <h3>Faturalandırma yapıyor musunuz?</h3>
+          Evet, firmamızda faturasız satış yoktur. Sipariş esnasında talebinize
+          göre bireysel fatura veya kurumsal fatura KDV dahil e-fatura kesilir.
+        </div>
+
+        <div class="faq-item">
+          <h3>Aynı anda birden fazla model gönderebilir miyim?</h3>
+          Evet, form üzerinden birden fazla modeli tek seferde gönderebilir ve
+          toplu teklif alabilirsiniz. Toplu siparişlerde indirim uygulanabilir.
+        </div>
+      </section>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2>Gerçekleştirin. Baskıya başlayın.</h2>
+      <p>
+        Vizyonunuzu somut bir hale getirmeye hazır mısınız? İster prototip
+        oluşturuyor, ister yaratıyor, ister sadece keşfediyor olun, 3D baskı
+        uzmanlarımız yanınızda.
+      </p>
+      <div class="cta-image">
+        <img src="img/printer.png" alt="" />
+        <!--<a href="#" class="btn offer-btn">3D Baskı Hizmeti</a>-->
+      </div>
+    </section>
+
+    <!-- WORKS -->
+    <section class="works-section">
+      <h2>Yaptığımız İşler</h2>
+      <div id="worksContainer" class="works"></div>
+
+      <!-- Modal -->
+      <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+          <div id="modalSlides" class="slides"></div>
+          <button class="nav-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="nav-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch("data.json")
+          .then((res) => res.json())
+          .then((data) => {
+            const container = document.getElementById("worksContainer");
+
+            data.forEach((work, index) => {
+              const card = document.createElement("div");
+              card.className = "card";
+              card.innerHTML = `
+          <img src="${work.images[0]}" alt="${work.title}">
+          <div style="padding:15px;">
+            <h3>${work.title}</h3>
+            <p>${work.desc}</p>
+          </div>
+        `;
+
+              // kart tıklandığında modal açma
+              card.addEventListener("click", () => openModal(work.images));
+              container.appendChild(card);
+            });
+          })
+          .catch((err) => console.error("JSON yüklenemedi:", err));
+      });
+
+      // modal açma fonksiyonu
+let slideIndex = 0;
+
+
+function openModal(images, startIndex = 0) {
+  const modal = document.getElementById("modal");
+  const slides = document.getElementById("modalSlides");
+
+  // Eğer resim listesi boş veya geçersizse
+  const validImages = images.filter(src => src && src.trim() !== "");
+
+  if (validImages.length === 0) {
+    slides.innerHTML = "<p style='color:white; text-align:center;'>⚠ Görsel bulunamadı</p>";
+    modal.style.display = "flex";
+    return;
+  }
+
+  // Sadece geçerli resimleri bas
+  slides.innerHTML = validImages
+  .map(src => `<img src="${src}" onerror="this.src='img/fallback.png'; this.onerror=null;" style="display:none; width:100%">`)
+  .join("");
+
+
+  modal.style.display = "flex";
+
+  slideIndex = startIndex;
+  showSlide(slideIndex);
+}
+
+
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
+function moveSlide(step) {
+  const slides = document.querySelectorAll("#modalSlides img");
+  if (slides.length === 0) return;
+
+  slideIndex = (slideIndex + step + slides.length) % slides.length;
+  showSlide(slideIndex);
+}
+
+function showSlide(index) {
+  const slides = document.querySelectorAll("#modalSlides img");
+
+  // Eğer hiç resim yoksa direkt return
+  if (!slides || slides.length === 0) return;
+
+  if (index >= slides.length) slideIndex = 0;
+  if (index < 0) slideIndex = slides.length - 1;
+
+  slides.forEach((s, i) => {
+    s.style.display = i === slideIndex ? "block" : "none";
+  });
+}
+
+
+    </script>
+
+    <!-- Google Maps Section -->
+    <section
+      class="map-section"
+      style="text-align: center; padding: 40px 0; background: #f7f7f7"
+    >
+      <h2>Bizi Nerede Bulabilirsiniz?</h2>
+      <div style="margin: 20px auto; max-width: 1000px">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227.2973412160842!2d32.76985495575886!3d39.96070499630117!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34f51e5e3d76d%3A0x6fd301bfff4d10f8!2sLazer%20Kesim%20Ulus%20-%20ARON%20TASARIM!5e0!3m2!1str!2str!4v1755445581199!5m2!1str!2str"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <h2>Fikirlerinizi gerçeğe dönüştürün</h2>
+      <a href="mailto:hello@neoprint.com" class="mail">hello@neoprint.com</a>
+      <div class="socials">
+        <a href="#">Dribbble</a>
+        <a href="#">Instagram</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </footer>
+  </body>
+</html>
