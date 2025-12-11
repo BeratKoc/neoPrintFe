@@ -10,7 +10,7 @@
     "build:assets": "npx mkdirp dist/img && xcopy img dist\\img /E /I && copy env.js dist\\env.js",
     "build:local": "npm run set:env:local && npm run build:html && npm run build:css && npm run build:js && npm run build:assets",
     "build:prod": "npm run set:env:prod && npm run build:html && npm run build:css && npm run build:js && npm run build:assets",
-    "start": "serve -s . -l ${PORT:-3000}"
+    "start": "serve -s . -l $PORT"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
