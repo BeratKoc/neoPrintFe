@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NeoPrint - Teklif Al</title>
-  <link rel="stylesheet" href="/offer/offer.css">
-<script src="/offer/offer.js"></script>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeoPrint - Teklif Al</title>
 
+  <!-- Teklif sayfası CSS -->
+  <link rel="stylesheet" href="/offer/offer.css" />
 
-
-  </head>
-  <body>
-    <!-- Navbar -->
+  <!-- Teklif sayfası JS -->
+  <script src="/offer/offer.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="nav-left">
       <a href="/index.html">
-        <img src="../img/logo.png" alt="NeoPrint Logo" class="logo" />
+        <!-- logo -->
+        <img src="/img/logo.png" alt="NeoPrint Logo" class="logo" />
       </a>
       <span class="brand">NeoPrint</span>
     </div>
@@ -22,165 +25,173 @@
       <a href="/index.html" class="btn small">⬅ Geri Dön</a>
     </div>
   </nav>
-  
-    <html lang="tr">
-  <div id="loader" class="loader-overlay" style="display:none;">
-  <div class="spinner"></div>
 
-</div>
-    <main class="container">
-      <h2>3D Baskı İçin Teklif Al</h2>
+  <!-- Loader -->
+  <div id="loader" class="loader-overlay" style="display: none;">
+    <div class="spinner"></div>
+  </div>
 
-      <form  id="offerForm" class="offer-form" enctype="multipart/form-data">
-        <!-- Dosya yükleme -->
-        <div class="file-upload">
-    <label for="file" class="custom-file-label">
-        📂 Dosya Seç
-    </label>
-    <input type="file" id="file" name="files" accept=".stl,.obj,.zip" multiple hidden />
-    <p>Desteklenen tipler: STL, OBJ, ZIP | Max: 16MB</p>
-    <div id="fileList" class="file-list"></div>
-</div>
+  <!-- İçerik -->
+  <main class="container">
+    <h2>3D Baskı İçin Teklif Al</h2>
 
+    <form id="offerForm" class="offer-form" enctype="multipart/form-data">
+      <!-- Dosya yükleme -->
+      <div class="file-upload">
+        <label for="file" class="custom-file-label">
+          📂 Dosya Seç
+        </label>
+        <input
+          type="file"
+          id="file"
+          name="files"
+          accept=".stl,.obj,.zip"
+          multiple
+          hidden
+        />
+        <p>Desteklenen tipler: STL, OBJ, ZIP | Max: 16MB</p>
+        <div id="fileList" class="file-list"></div>
+      </div>
 
+      <!-- Filament türü -->
+      <label>
+        Filament Türü Seçimi*
+        <select name="filament" required>
+          <option value="">Seçiniz</option>
+          <option value="PLA+">PLA+</option>
+          <option value="PETG">PETG</option>
+          <option value="ABS">ABS</option>
+          <option value="ASA">ASA</option>
+          <option value="TPU">TPU</option>
+          <option value="PLA-CF">PLA-CF</option>
+          <option value="Diğer">Diğer</option>
+        </select>
+      </label>
 
-        
+      <!-- Adet / Renk -->
+      <div class="grid">
+        <label>
+          Adet*
+          <input type="number" name="quantity" min="1" required />
+        </label>
 
-        <!-- Filament türü -->
-        <!-- Filament Türü (Dropdown) -->
-        <label
-          >Filament Türü Seçimi*
-          <select name="filament" required>
-            <option value="">Seçiniz</option>
-            <option value="PLA+">PLA+</option>
-            <option value="PETG">PETG</option>
-            <option value="ABS">ABS</option>
-            <option value="ASA">ASA</option>
-            <option value="TPU">TPU</option>
-            <option value="PLA-CF">PLA-CF</option>
-            <option value="Diğer">Diğer</option>
+        <label>
+          Renk*
+          <select name="color" required>
+            <option value="Siyah">Siyah</option>
+            <option value="Beyaz">Beyaz</option>
+            <option value="Kırmızı">Kırmızı</option>
+            <option value="Mavi">Mavi</option>
+            <option value="Yeşil">Yeşil</option>
           </select>
         </label>
+      </div>
 
-        <!-- Adet, Renk, Doluluk, Katman Yüksekliği -->
-        <div class="grid">
-          <label
-            >Adet*
-            <input type="number" name="quantity" min="1" required />
-          </label>
-
-          <label
-            >Renk*
-            <select name="color" required>
-              <option value="Siyah">Siyah</option>
-              <option value="Beyaz">Beyaz</option>
-              <option value="Kırmızı">Kırmızı</option>
-              <option value="Mavi">Mavi</option>
-              <option value="Yeşil">Yeşil</option>
-            </select>
-          </label>
-        </div>
-
-        <div class="grid">
-          <label
-            >Doluluk Oranı % (infill)
-            <input type="number" name="infill" min="0" max="100" value="20" />
-          </label>
-
-          <label
-            >Katman Yüksekliği (Layer Height)
-            <select name="layer">
-              <option value="0.12">0,12 mm</option>
-              <option value="0.16">0,16 mm</option>
-              <option value="0.20" selected>0,20 mm</option>
-              <option value="0.28">0,28 mm</option>
-            </select>
-          </label>
-        </div>
-
-       <label>
-  Talep Ettiğiniz Teslim Tarihi
-  <input type="date" name="deliveryDate" required />
-</label>
-
-
-        <label
-          >Ek Açıklamalar
-          <textarea
-            name="details"
-            placeholder="Teknik gereksinimler, özel talepler..."
-          ></textarea>
+      <!-- Doluluk / Katman -->
+      <div class="grid">
+        <label>
+          Doluluk Oranı % (infill)
+          <input type="number" name="infill" min="0" max="100" value="20" />
         </label>
 
-        <!-- Kişisel bilgiler -->
-        <div class="grid">
-          <label
-            >Adınız*
-            <input type="text" name="firstName" required />
-          </label>
-
-          <label
-            >Soyadınız*
-            <input type="text" name="lastName" required />
-          </label>
-        </div>
-
-        <div class="grid">
-          <label
-            >E-posta*
-            <input type="email" name="email" required />
-          </label>
-
-          <label>
-  Telefon Numaranız*
-  <input type="tel" 
-       id="phone" 
-       name="phone" 
-       placeholder="0XXXXXXXXXX" 
-       pattern="^0[0-9]{10}$" 
-       required />
-
-</label>
-        </div>
-         
-
-        <!-- KVKK -->
-        <div class="kvkk">
-          <input type="checkbox" id="consent" required />
-          <label for="consent">
-            Kişisel verilerimin işlenmesine onay veriyorum.
-            <a href="#" id="showPolicy">Aydınlatma Metni</a>
-          </label>
-        </div>
-
-        <button type="submit" class="btn-primary">Teklif Al</button>
-      </form>
-    </main>
-
-    <!-- Modal -->
-    <div id="policyModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Aydınlatma Metni</h2>
-        <p>
-          6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) kapsamında,
-          tarafımıza iletmiş olduğunuz ad, soyad, telefon numarası, e-posta
-          adresi ve sipariş detayları gibi kişisel verileriniz; 3D baskı
-          talebinizin değerlendirilmesi, size teklif sunulması ve süreç boyunca
-          gerekli iletişimin sağlanması amacıyla işlenecektir.
-        </p>
-        <p>
-          Kişisel verileriniz, yalnızca belirtilen amaçlarla sınırlı kalmak
-          kaydıyla işlenecek olup, üçüncü kişilerle izniniz olmaksızın
-          paylaşılmayacaktır. KVKK’nın 11. maddesi kapsamında veri sahibi olarak
-          her zaman haklarınıza ilişkin başvuru yapabilirsiniz.
-        </p>
-        <p>
-          Detaylı bilgi için <strong>www.kvkk.gov.tr</strong> adresini ziyaret
-          edebilirsiniz.
-        </p>
+        <label>
+          Katman Yüksekliği (Layer Height)
+          <select name="layer">
+            <option value="0.12">0,12 mm</option>
+            <option value="0.16">0,16 mm</option>
+            <option value="0.20" selected>0,20 mm</option>
+            <option value="0.28">0,28 mm</option>
+          </select>
+        </label>
       </div>
+
+      <!-- Teslim tarihi -->
+      <label>
+        Talep Ettiğiniz Teslim Tarihi
+        <input type="date" name="deliveryDate" required />
+      </label>
+
+      <!-- Ek açıklamalar -->
+      <label>
+        Ek Açıklamalar
+        <textarea
+          name="details"
+          placeholder="Teknik gereksinimler, özel talepler..."
+        ></textarea>
+      </label>
+
+      <!-- İsim / Soyisim -->
+      <div class="grid">
+        <label>
+          Adınız*
+          <input type="text" name="firstName" required />
+        </label>
+
+        <label>
+          Soyadınız*
+          <input type="text" name="lastName" required />
+        </label>
+      </div>
+
+      <!-- Mail / Telefon -->
+      <div class="grid">
+        <label>
+          E-posta*
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          Telefon Numaranız*
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="0XXXXXXXXXX"
+            pattern="^0[0-9]{10}$"
+            required
+          />
+        </label>
+      </div>
+
+      <!-- KVKK -->
+      <div class="kvkk">
+        <input type="checkbox" id="consent" required />
+        <label for="consent">
+          Kişisel verilerimin işlenmesine onay veriyorum.
+          <a href="#" id="showPolicy">Aydınlatma Metni</a>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-primary">Teklif Al</button>
+    </form>
+  </main>
+
+  <!-- KVKK Modal -->
+  <div id="policyModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Aydınlatma Metni</h2>
+      <p>
+        6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) kapsamında,
+        tarafımıza iletmiş olduğunuz ad, soyad, telefon numarası, e-posta
+        adresi ve sipariş detayları gibi kişisel verileriniz; 3D baskı
+        talebinizin değerlendirilmesi, size teklif sunulması ve süreç boyunca
+        gerekli iletişimin sağlanması amacıyla işlenecektir.
+      </p>
+      <p>
+        Kişisel verileriniz, yalnızca belirtilen amaçlarla sınırlı kalmak
+        kaydıyla işlenecek olup, üçüncü kişilerle izniniz olmaksızın
+        paylaşılmayacaktır. KVKK’nın 11. maddesi kapsamında veri sahibi olarak
+        her zaman haklarınıza ilişkin başvuru yapabilirsiniz.
+      </p>
+      <p>
+        Detaylı bilgi için <strong>www.kvkk.gov.tr</strong> adresini ziyaret
+        edebilirsiniz.
+      </p>
     </div>
- <div id="toast" class="toast"></div>
-  </body>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+</body>
 </html>
