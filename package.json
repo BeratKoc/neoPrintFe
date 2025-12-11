@@ -4,23 +4,19 @@
   "scripts": {
     "set:env:local": "copy env.local.js env.js",
     "set:env:prod": "copy env.prod.js env.js",
-
     "build:html": "npx mkdirp dist/offer && npx html-minifier-terser index.html -o dist/index.html --collapse-whitespace --remove-comments --minify-css true --minify-js true && npx html-minifier-terser 404.html -o dist/404.html --collapse-whitespace --remove-comments --minify-css true --minify-js true && npx html-minifier-terser offer/offer.html -o dist/offer/offer.html --collapse-whitespace --remove-comments --minify-css true --minify-js true",
-
     "build:css": "npx cleancss -o dist/style.min.css style.css && npx cleancss -o dist/offer/offer.min.css offer/offer.css",
-
     "build:js": "npx uglify-js offer/offer.js -o dist/offer/offer.min.js -c -m",
-
     "build:assets": "npx mkdirp dist/img && xcopy img dist\\img /E /I && copy env.js dist\\env.js",
-
     "build:local": "npm run set:env:local && npm run build:html && npm run build:css && npm run build:js && npm run build:assets",
-
-    "build:prod": "npm run set:env:prod && npm run build:html && npm run build:css && npm run build:js && npm run build:assets"
+    "build:prod": "npm run set:env:prod && npm run build:html && npm run build:css && npm run build:js && npm run build:assets",
+    "start": "serve -s . -l ${PORT:-3000}"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
     "html-minifier-terser": "^7.2.0",
-    "uglify-js": "^3.19.3",
-    "mkdirp": "^3.0.1"
+    "mkdirp": "^3.0.1",
+    "serve": "^14.2.5",
+    "uglify-js": "^3.19.3"
   }
 }
