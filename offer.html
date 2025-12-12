@@ -198,6 +198,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   // === CONFIG ===
   const API_URL = "https://neoprintbe-production.up.railway.app";
+  const UPLOAD_URL = `${API_BASE}/upload`;
+  
 
   // === ELEMENTS ===
   const form = document.getElementById("offerForm");
@@ -331,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setLoading(true);
 
     try {
-      const res = await fetch(API_URL, { method: "POST", body: formData });
+      const res = await fetch(UPLOAD_URL, { method: "POST", body: formData });
       if (!res.ok) throw new Error(`Sunucu hatası: ${res.status}`);
 
       const text = await res.text();
