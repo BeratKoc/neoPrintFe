@@ -8,8 +8,6 @@
   <!-- Teklif sayfası CSS -->
   <link rel="stylesheet" href="/offer.css" />
 
-  <!-- Teklif sayfası JS -->
-  <script src="/offer.js" defer></script>
 </head>
 <body>
   <!-- Navbar -->
@@ -195,3 +193,182 @@
   <div id="toast" class="toast"></div>
 </body>
 </html>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // === CONFIG ===
+  const API_URL = "neoprintbe.railway.internal/upload"; // <-- burayı değiştir (tam /upload dahil)
+
+  // === ELEMENTS ===
+  const form = document.getElementById("offerForm");
+  const loader = document.getElementById("loader");
+  const fileInput = document.getElementById("file");
+  const fileList = document.getElementById("fileList");
+  const toast = document.getElementById("toast");
+
+  // modal
+  const modal = document.getElementById("policyModal");
+  const link = document.getElementById("showPolicy");
+  const closeBtn = document.querySelector(".close");
+
+  // phone
+  const phoneInput = document.getElementById("phone");
+
+  // === STATE ===
+  let selectedFiles = [];
+  const allowedExtensions = [".stl", ".obj", ".zip"];
+  const MAX_SIZE = 16 * 1024 * 1024;
+
+  // === HELPERS ===
+  function showToast(message, success = true) {
+    toast.innerText = message;
+    toast.style.backgroundColor = success ? "#28a745" : "#dc3545";
+    toast.className = "toast show";
+    setTimeout(() => (toast.className = toast.className.replace("show", "")), 3000);
+  }
+
+  function setLoading(isLoading) {
+    if (!loader) return;
+    loader.style.display = isLoading ? "flex" : "none";
+  }
+
+  function renderFileList() {
+    fileList.innerHTML = "";
+
+    selectedFiles.forEach((file, index) => {
+      const div = document.createElement("div");
+      div.className = "file-item";
+      div.innerHTML = `
+        <span>${file.name} <span class="file-size">(${(file.size / 1024 / 1024).toFixed(2)} MB)</span></span>
+        <button type="button" data-index="${index}">❌</button>
+      `;
+      fileList.appendChild(div);
+    });
+
+    // delete handlers
+    fileList.querySelectorAll("button[data-index]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const i = Number(btn.dataset.index);
+        selectedFiles.splice(i, 1);
+        renderFileList();
+      });
+    });
+  }
+
+  // === FILE CHANGE (TEK) ===
+  fileInput.addEventListener("change", () => {
+    const files = Array.from(fileInput.files || []);
+    if (!files.length) return;
+
+    let invalidExt = false;
+    let invalidSize = false;
+    let addedAny = false;
+
+    files.forEach((file) => {
+      const dot = file.name.lastIndexOf(".");
+      const ext = dot >= 0 ? file.name.substring(dot).toLowerCase() : "";
+
+      if (!allowedExtensions.includes(ext)) {
+        invalidExt = true;
+        return;
+      }
+
+      if (file.size > MAX_SIZE) {
+        invalidSize = true;
+        return;
+      }
+
+      const exists = selectedFiles.some((f) => f.name === file.name && f.size === file.size);
+      if (!exists) {
+        selectedFiles.push(file);
+        addedAny = true;
+      }
+    });
+
+    if (invalidExt) showToast("✖ Sadece STL, OBJ veya ZIP yükleyebilirsiniz!", false);
+    if (invalidSize) showToast("✖ Maksimum dosya boyutu 16MB!", false);
+
+    renderFileList();
+
+    // ⚠️ input'u change içinde boşaltmak bazı ortamlarda dialogu bozabiliyor.
+    // O yüzden burada SIFIRLAMIYORUZ.
+    // Aynı dosyayı tekrar seçmek istersen, silip yeniden seçebilirsin.
+  });
+
+  // === SUBMIT (TEK) ===
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // validations
+    const filament = form.querySelector("[name='filament']")?.value?.trim();
+    const email = form.querySelector("[name='email']")?.value?.trim();
+
+    if (!selectedFiles.length) return showToast("✖ Lütfen bir dosya seçin!", false);
+    if (!filament) return showToast("✖ Filament türünü seçiniz!", false);
+    if (!email || !email.includes("@")) return showToast("✖ Geçerli bir e-posta giriniz!", false);
+
+    const formData = new FormData();
+    selectedFiles.forEach((file) => formData.append("files", file));
+
+    // other fields (boşsa boş gider)
+    [
+      "firstName",
+      "lastName",
+      "email",
+      "phone",
+      "filament",
+      "quantity",
+      "color",
+      "infill",
+      "layer",
+      "deliveryDate",
+      "details",
+    ].forEach((name) => {
+      const v = form.querySelector(`[name='${name}']`)?.value ?? "";
+      formData.append(name, v);
+    });
+
+    setLoading(true);
+
+    try {
+      const res = await fetch(API_URL, { method: "POST", body: formData });
+      if (!res.ok) throw new Error(`Sunucu hatası: ${res.status}`);
+
+      const text = await res.text();
+      showToast("✔ " + text, true);
+
+      form.reset();
+      selectedFiles = [];
+      renderFileList();
+    } catch (err) {
+      showToast("✖ Hata: " + err.message, false);
+    } finally {
+      setLoading(false);
+    }
+  });
+
+  // === MODAL ===
+  if (link && modal && closeBtn) {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      modal.style.display = "block";
+    });
+    closeBtn.addEventListener("click", () => (modal.style.display = "none"));
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  }
+
+  // === PHONE FORMAT ===
+  if (phoneInput) {
+    phoneInput.addEventListener("input", () => {
+      let val = phoneInput.value;
+      if (!val.startsWith("0")) val = "0" + val.replace(/^0+/, "");
+      if (val.length > 11) val = val.slice(0, 11);
+      phoneInput.value = val;
+    });
+  }
+});
+
+
+</script>
