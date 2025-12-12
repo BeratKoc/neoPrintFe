@@ -197,10 +197,8 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   // === CONFIG ===
-  const API_URL = "https://neoprintbe-production.up.railway.app";
-  const UPLOAD_URL = `${API_BASE}/upload`;
-  
-
+  const API_BASE = "https://neoprintbe-production.up.railway.app";
+  const UPLOAD_URL = API_BASE + "/upload-offer";
   // === ELEMENTS ===
   const form = document.getElementById("offerForm");
   const loader = document.getElementById("loader");
